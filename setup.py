@@ -34,7 +34,7 @@ with open("README.md", "r", encoding='UTF-8') as fh:
 root = os.path.abspath(os.path.dirname(__file__))
 
 if not VERSION:
-    with open(os.path.join(root, "pyfeishu", "__version__.py")) as f:
+    with open(os.path.join(root, "pydingtalk", "__version__.py")) as f:
         exec(f.read(), about)
 else:
     about["__version__"] = VERSION
