@@ -40,6 +40,7 @@ send link
 ```
 data = {"msgtype": "markdown", "markdown": {"title": "LiuKeTest", "text": "### LiuKeTest @138XXXXXXXX \n > [pydingtalk](https://pypi.org/project/pydingtalk)"}}
 ```
+More message types, please visit [DingTalk](https://open.dingtalk.com/document/robots/custom-robot-access).
 
 ## Features
 - Supports all types message 
