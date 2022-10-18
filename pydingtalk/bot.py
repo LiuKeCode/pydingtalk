@@ -8,7 +8,6 @@
 import base64
 import hashlib
 import hmac
-import json
 import time
 import urllib.parse
 
@@ -34,7 +33,6 @@ class DingTalkBot:
         sign = urllib.parse.quote_plus(base64.b64encode(hmac_code))
 
         return sign
-
 
     @retry(stop=stop_after_attempt(3),
            wait=wait_fixed(1),
@@ -64,7 +62,6 @@ class DingTalkBot:
     def post(self, endpoint, header=None, *args, **kwargs):
         return self.http_client('POST', endpoint, header, *args, **kwargs)
 
-
     # def upload_image(self, img):
     #     url = "https://open.feishu.cn/open-apis/im/v1/images"
     #     form = {'image_type': 'message', 'image': (open(img, 'rb'))} 
@@ -89,5 +86,4 @@ class DingTalkBot:
             "timestamp": t,
             "sign": sign,
         }
-        return self.post('/robot/send',header=header,params=params,json=msg)
-    
+        return self.post('/robot/send', header=header, params=params, json=msg)
